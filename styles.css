@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+/* header of the page */
 .title {
   color: #025955;
   font-size: 8rem;
@@ -20,10 +21,54 @@
   position: relative;
   text-align: center;
 }
-.body {
+/* where the charts go  */
+.grid-container {
   background-color: #fde8cd;
   height: 60vh;
+  padding: 2rem;
+  text-align: center;
+  overflow-y: scroll;
 }
+.card-grid {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  margin: 2rem;
+  position: relative;
+}
+
+.front {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: absolute;
+  font-size: 4rem;
+  color: #025955;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  padding-top: 1.5rem;
+  background-color: white;
+  border: 2px solid black;
+  transition: all 0.5s ease-out 0s;
+  transform: rotateY(0deg);
+}
+.back {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: relative;
+  font-size: 4rem;
+  color: #025955;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 1.5rem;
+  background-color: white;
+  border: 2px solid black;
+  transform: rotateY(-180deg);
+  transition: all 0.5s ease-out 0s;
+}
+
+/* footers */
 .footer {
   background-color: #433520;
   height: 10vh;
@@ -33,6 +78,28 @@
   color: white;
   padding-top: 2rem;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: gray transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+  border: 3px solid orange;
+}
+
+/* Media Queries */
 
 @media (max-width: 780px) {
   .title {
