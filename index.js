@@ -85,5 +85,26 @@ function katakana() {
 //change to learning section
 function learn() {
   $(".grid-container").empty();
-  $(".grid-container").append("<h1>There is nothing to see here for now.</h1>");
+
+  $.getJSON(
+    "https://raw.githubusercontent.com/ItzDeme/Nihon-Oh/main/json/learn.json",
+    function (posts) {
+      for (var post = 0; post < posts.length; post++) {
+        $(".grid-container").append(
+          "<div class='sectionHolder'>" +
+            "<div class='sectionTitle'>" +
+            "<h1>" +
+            posts[post].title +
+            "</h1>" +
+            "</div>" +
+            "<div class='sectionNotes'>" +
+            "<p>" +
+            posts[post].notes +
+            "</p>" +
+            "</div>" +
+            "</div>"
+        );
+      }
+    }
+  );
 }
