@@ -24,7 +24,7 @@
 /* where the charts go  */
 .grid-container {
   background-color: #fde8cd;
-  height: 60vh;
+  height: 65vh;
   padding: 2rem;
   text-align: center;
   overflow-y: scroll;
@@ -35,6 +35,9 @@
   height: 100px;
   margin: 2rem;
   position: relative;
+}
+.card-grid:hover {
+  cursor: pointer;
 }
 
 .front {
@@ -71,12 +74,12 @@
 /* footers */
 .footer {
   background-color: #433520;
-  height: 10vh;
+  height: 5vh;
   text-align: center;
 }
 .caption {
   color: white;
-  padding-top: 2rem;
+  padding-top: 10px;
 }
 
 * {
@@ -132,5 +135,17 @@ p.sectionNotes {
   .card-grid {
     width: 90px;
     margin: 1.5rem;
+  }
+}
+
+@media (max-height: 950px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+@media (max-height: 810px) {
+  .title {
+    font-size: 4rem;
   }
 }
